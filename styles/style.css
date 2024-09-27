@@ -1,0 +1,164 @@
+body {
+    font-family: 'Arial', Helvetica, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    position: sticky;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(169, 227, 34);
+    background-size: cover;
+    z-index: 3;
+    width: calc(100% - 3rem);
+    max-width: 81rem;
+    margin: 0 auto;
+}
+
+navbar svg {
+    width: 24px;
+    height: 24px;
+    fill: black;
+}
+
+.links {
+    display: flex;
+    list-style: none;
+    padding: 0 15px;
+    gap: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.icons {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0 15px;
+}
+
+.icons li {
+    display: inline;
+}
+
+.icons i {
+    text-decoration: none;
+    color: black;
+}
+
+.icons a::before {
+    content: none;
+}
+
+main {
+    background-color: rgb(210, 239, 191);
+    position: relative;
+    margin: 0 auto;
+    width: calc(100% - 3rem);
+    max-width: 81rem;
+    z-index: 2;
+}
+
+article {
+    display: block;
+}
+
+.featured_project {
+    text-align: center;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.projects article {
+    flex: 1 1 50%;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-color: black;
+    border-style: solid;
+    text-align: center;
+    padding: 4rem;
+    width: 50%;
+}
+
+.project article:nth-child(n-2) {
+    border-bottom-width: 0;
+}
+
+.projects article:nth-child(odd) {
+    border-left-width: 0;
+}
+
+.projects article:nth-child(even) {
+    border-right-width: 0;
+    border-left-width: 0;
+}
+
+.read-more {
+    text-transform: uppercase;
+}
+
+.image.fit {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.2 ease-out;
+}
+
+a:hover img {
+    transform: scale(1.05);
+}
+
+ul.actions {
+    display: flex;
+    cursor: default;
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.actions.special {
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+}
+
+#back-to-top {
+    background-color: white;
+    cursor: pointer;
+}
+
+#back-to-top:hover {
+    background-color: grey;
+}
+
+.padding-top {
+    padding-top: 2.5rem;
+}
+
+.padding-top-bottom {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.align-center {
+    display: flex;
+    justify-content: center;
+}
