@@ -1,5 +1,15 @@
 body {
     font-family: 'Arial', Helvetica, sans-serif;
+    color: rgb(209, 215, 238);
+    background-color: rgb(143, 96, 188);
+    align-items: center;
+}
+
+header, main, footer {
+    width: calc(100% - 3rem);
+    max-width: 81rem;
+    margin: 0 auto;
+    background-color: black;
 }
 
 .navbar {
@@ -7,27 +17,45 @@ body {
     position: sticky;
     align-items: center;
     justify-content: space-between;
-    background-color: rgb(169, 227, 34);
     background-size: cover;
     z-index: 3;
-    width: calc(100% - 3rem);
-    max-width: 81rem;
     margin: 0 auto;
-}
-
-navbar svg {
-    width: 24px;
-    height: 24px;
-    fill: black;
+    border: 4px solid rgb(209, 215, 238);
+    height: 58.2px;
 }
 
 .links {
     display: flex;
     list-style: none;
-    padding: 0 15px;
-    gap: 15px;
     text-transform: uppercase;
     font-weight: bold;
+    padding: 0;
+    margin: 0;
+    height: 100%
+}
+
+.links li {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    border-right: 2px solid rgb(209, 215, 238);
+    height: 100%;
+    background-color: rgb(143, 96, 188);
+    color: black;
+}
+
+.links li a {
+    color: inherit;
+}
+
+.links li.active {
+    color: rgb(143, 96, 188);
+    background-color: black;
+    border-bottom: 4px solid black;
+}
+
+.links li.active a {
+    color: inherit;
 }
 
 .icons {
@@ -43,20 +71,45 @@ navbar svg {
 
 .icons i {
     text-decoration: none;
-    color: black;
+    color: rgb(209, 215, 238);
 }
 
 .icons a::before {
     content: none;
 }
 
-main {
-    background-color: rgb(210, 239, 191);
-    position: relative;
-    margin: 0 auto;
-    width: calc(100% - 3rem);
-    max-width: 81rem;
-    z-index: 2;
+#aboutme {
+    padding: 2rem;
+    border: 2px solid rgb(209, 215, 238);
+    border-bottom-width: 0;
+    border-top-width: 0;
+}
+
+#me {
+    display: inline-block;
+    width: 100%;
+}
+
+.columns {
+    display: flex;
+    width: 100%;
+    align-content: center;
+    vertical-align: top;
+}
+
+.column {
+    flex: 1 1 50%;
+    padding: 2em;
+    box-sizing: border-box; 
+}
+
+.img-column {
+    max-width: 50%;
+}
+
+.img-column img {
+    width: 100%;
+    height: auto;
 }
 
 article {
@@ -71,37 +124,52 @@ article {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center;
+    justify-content: left;
     text-align: center;
     width: 100%;
+    border: 2px solid rgb(209, 215, 238);
+    border-bottom-width: 0;
+    border-top-width: 0;
+    box-sizing: border-box;
 }
 
 .projects article {
     flex: 1 1 50%;
     box-sizing: border-box;
-    border: 2px solid black;
-    border-color: black;
-    border-style: solid;
+    border: 2px solid rgb(209, 215, 238);
     text-align: center;
     padding: 4rem;
-    width: 50%;
+    max-width: 50%;
 }
 
-.project article:nth-child(n-2) {
+.projects article.more-coming {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: rgb(143, 96, 188);
+}
+
+.projects article:nth-child(n+3) {
     border-bottom-width: 0;
+    border-top-width: 0;
+}
+
+.projects article:nth-child(1),
+.projects article:nth-child(2) {
+    border-top-width: 0;
 }
 
 .projects article:nth-child(odd) {
-    border-left-width: 0;
+    border-right-width: 2px;
 }
 
 .projects article:nth-child(even) {
-    border-right-width: 0;
     border-left-width: 0;
 }
 
-.read-more {
-    text-transform: uppercase;
+span.date {
+    color: lightslategray
 }
 
 .image.fit {
@@ -111,7 +179,15 @@ article {
     overflow: hidden;
 }
 
-a img {
+a:link {
+    color: rgb(143, 96, 188);
+}
+
+a:visited {
+    color: rgb(143, 96, 188);
+}
+
+.projects article a img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -137,12 +213,24 @@ ul.actions.special {
 }
 
 footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid rgb(209, 215, 238);
+    box-sizing: border-box;
+}
+
+footer div {
+    display: flex;
+    width: 100%;
+    justify-content: center;
     text-align: center;
 }
 
 #back-to-top {
-    background-color: white;
+    background-color: rgb(209, 215, 238);
     cursor: pointer;
+    margin-bottom: 2em;
 }
 
 #back-to-top:hover {
@@ -158,7 +246,22 @@ footer {
     padding-bottom: 0.75rem;
 }
 
+.uppercase {
+    text-transform: uppercase;
+}
+
 .align-center {
     display: flex;
     justify-content: center;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.indent {
+    text-indent: 2em;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 1px;
 }
